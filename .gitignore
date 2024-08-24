@@ -1,0 +1,11 @@
+Breast Cancer
+Cervical Cancer
+env
+node_modules
+FemCare Synopsis.docx
+FemCare Synopsis.pdf
+package-lock.json
+package.json
+src
+tailwind.config.js
+ovarian-cancer.h5
