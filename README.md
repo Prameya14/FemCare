@@ -1,8 +1,9 @@
 # FemCare - Insightful Wellness 🌸
 
 ## Project by:
-- **Upasana Pradhan**
 - **Prameya Mohanty**
+- **Upasana Pradhan**
+- **Sushree Aayushi**
 
 **Class:** XI  
 **School:** Delhi Public School, Rourkela
