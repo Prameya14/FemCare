@@ -111,30 +111,17 @@ target_names = {
 model = tf.keras.models.load_model("models/ovarian-cancer.h5")
 
 def load_and_prep_image(filename, img_shape=224):
-    # Read in target file (an image)
     img = tf.io.read_file(filename)
-    # Decode the read file into a tensor & ensure 3 colour channels
-    # (our model is trained on images with 3 colour channels and sometimes images have 4 colour channels)
     img = tf.image.decode_image(img, channels=3)
-    # Resize the image (to the same size our model was trained on)
     img = tf.image.resize(img, size = [img_shape, img_shape])
-    # Rescale the image (get all values between 0 and 1)
     img = img/255.
     return img
 
 def pred_and_plot(model, filename, target_names):
     tn = list(target_names.keys())
-    """
-    Imports an image located at filename, makes a prediction on it with
-    a trained model and plots the image with the predicted class as the title.
-    """
-    # Import the target image and preprocess it
     img = load_and_prep_image(filename)
-    # Make a prediction
     pred = model.predict(tf.expand_dims(img, axis=0))
-    # Get the predicted class
     pred_class = tn[int(tf.round(pred)[0][0])]
-
     return f"The class of Ovarian Cancer is {target_names[pred_class]}"
 
 # ========================================================================================
@@ -164,7 +151,6 @@ def cervical_cancer():
         prediction = model.predict(np.array([vals]))
         
         return render_template("cervical-cancer.html", features=features, values=[], cc_result=str(prediction[0]*25) + "%")
-
     return render_template("cervical-cancer.html", features=features, values=values, cc_result="")
 
 @app.route("/pcos", methods=["GET", "POST"])
@@ -180,7 +166,6 @@ def pcos():
             return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="There is a high chance of PCOS for these parameters.")
         else:
             return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="There is a low chance of PCOS for these parameters.")
-    
     return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="")
 
 @app.route("/breast-cancer", methods=["GET", "POST"])
