@@ -8,9 +8,9 @@ import os
 from werkzeug.utils import secure_filename
 import shutil
 from flask_pymongo import PyMongo
-# import json
 import requests
 import tensorflow as tf
+# import json
 
 app = Flask(__name__, static_folder="Static", template_folder="Templates")
 
@@ -44,14 +44,12 @@ loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
 loaded_model.load_weights(r"models\breast_cancer.h5")
-
 loaded_model.compile(
     loss="binary_crossentropy", optimizer="rmsprop", metrics=["accuracy"]
 )
 
 def save_and_get_pred_img(image):
     defrance = str(random.randint(1, 100000))
-    
     file = r"C:\Users\prame\OneDrive - 45ktw4\Documents\Intel India AI Impact Festival 2024\FemCare"
     file_path = os.path.join(file, defrance)
     os.makedirs(file_path)
@@ -233,3 +231,4 @@ def get():
 
 if __name__ == "__main__":
     app.run(debug=True, host="192.168.0.104", port=5001)
+    
