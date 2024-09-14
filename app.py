@@ -13,7 +13,7 @@ import tensorflow as tf
 # import json
 
 app = Flask(__name__, static_folder="Static", template_folder="Templates")
-app.secret_key = 'super-secret-key'
+app.secret_key = '935a55bf-295f-476f-b026-8c362867fa2b'
 
 # Journal Setup from MongoDB
 

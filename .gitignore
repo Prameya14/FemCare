@@ -9,3 +9,4 @@ package.json
 src
 tailwind.config.js
 ovarian-cancer.h5
+venv
