@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect
 import joblib
 import numpy as np
 from tensorflow.keras.preprocessing.image import ImageDataGenerator # type: ignore
@@ -13,6 +13,7 @@ import tensorflow as tf
 # import json
 
 app = Flask(__name__, static_folder="Static", template_folder="Templates")
+app.secret_key = 'super-secret-key'
 
 # Journal Setup from MongoDB
 
@@ -126,7 +127,7 @@ def pred_and_plot(model, filename, target_names):
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", session=session)
 
 @app.route("/cervical-cancer", methods=["GET", "POST"])
 def cervical_cancer():
@@ -148,8 +149,8 @@ def cervical_cancer():
         vals = [float(value) for value in values]
         prediction = model.predict(np.array([vals]))
         
-        return render_template("cervical-cancer.html", features=features, values=[], cc_result=str(prediction[0]*25) + "%")
-    return render_template("cervical-cancer.html", features=features, values=values, cc_result="")
+        return render_template("cervical-cancer.html", features=features, values=[], cc_result=str(prediction[0]*25) + "%", session=session)
+    return render_template("cervical-cancer.html", features=features, values=values, cc_result="", session=session)
 
 @app.route("/pcos", methods=["GET", "POST"])
 def pcos():
@@ -161,10 +162,10 @@ def pcos():
         pcos_model = joblib.load(r"models\pcos.joblib")
         prediction = list(pcos_model.predict(pred))[0]
         if prediction == 1:
-            return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="There is a high chance of PCOS for these parameters.")
+            return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="There, session=session is a high chance of PCOS for these parameters.")
         else:
-            return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="There is a low chance of PCOS for these parameters.")
-    return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="")
+            return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="There, session=session is a low chance of PCOS for these parameters.")
+    return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="", session=session)
 
 @app.route("/breast-cancer", methods=["GET", "POST"])
 def breast_cancer():
@@ -173,8 +174,8 @@ def breast_cancer():
         img_file_path = save_and_get_pred_img(image)
         predict_img = Api_service(img_file_path)
         has_cancer, has_no_cancer = predict_img.prediction_function()
-        return render_template("breast-cancer.html", bc_result=has_cancer)
-    return render_template("breast-cancer.html", bc_result="")
+        return render_template("breast-cancer.html", bc_result=has_cancer, session=session)
+    return render_template("breast-cancer.html", bc_result="", session=session)
     
 @app.route("/ovarian-cancer", methods=["GET", "POST"])
 def ovarian_cancer():
@@ -185,8 +186,8 @@ def ovarian_cancer():
         image.save(file_path)
         result = pred_and_plot(model, file_path, target_names)
         os.remove(file_path)
-        return render_template("ovarian-cancer.html", oc_result=result)
-    return render_template("ovarian-cancer.html", oc_result="")
+        return render_template("ovarian-cancer.html", oc_result=result, session=session)
+    return render_template("ovarian-cancer.html", oc_result="", session=session)
     
 @app.route("/journal", methods=["GET", "POST"])
 def journal():
@@ -194,7 +195,7 @@ def journal():
     articles = mongo.db.articles.find({})
     # From JSON
     # articles = data
-    return render_template("journal.html", articles=articles)
+    return render_template("journal.html", articles=articles, session=session)
 
 @app.route("/article/<article_slug>")
 def article(article_slug):
@@ -205,7 +206,7 @@ def article(article_slug):
     # for item in data:
     #     if item["slug"] == article_slug:
     #         article = item
-    return render_template("article.html", article=article)
+    return render_template("article.html", article=article, session=session)
 
 @app.route("/add", methods=["POST"])
 def add():
@@ -228,6 +229,23 @@ def get():
 
     response = requests.request("POST", reqUrl, data=payload,  headers=headersList)
     return response.text
+
+@app.route("/signin", methods=["GET", "POST"])
+def signin():
+    if request.method == "POST":
+        data = dict(request.form)
+        user = mongo.db.users.find_one(data)
+        if (user != None):
+            session['user'] = {"username": user["username"], "email": user["email"]}
+        return redirect("/")
+
+    print(session)
+    return render_template("login.html", session=session)
+
+@app.route("/logout")
+def logout():
+    session.pop('user')
+    return redirect('/signin')
 
 if __name__ == "__main__":
     app.run(debug=True, host="192.168.0.105", port=5001)
