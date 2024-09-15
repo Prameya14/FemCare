@@ -47,7 +47,8 @@ endblock %} {% block body %}
         Polycystic Ovary Syndrome
       </h1>
       <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-        Enter your details to receive a personalized PCOS risk assessment powered by advanced AI.
+        Enter your details to receive a personalized PCOS risk assessment
+        powered by advanced AI.
       </p>
     </div>
     <form
@@ -60,7 +61,9 @@ endblock %} {% block body %}
         {% for feature in pcos_features[0] %} {% if loop.index0 != 32 %}
         <div class="p-2 w-1/2 sm:w-1/4">
           <div class="relative">
-            <label for="{{ feature }}" class="leading-7 text-sm font-semibold text-gray-400"
+            <label
+              for="{{ feature }}"
+              class="leading-7 text-sm font-semibold text-gray-400"
               >{{ feature }}</label
             >
             <input
