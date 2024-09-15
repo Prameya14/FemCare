@@ -47,8 +47,7 @@ endblock %} {% block body %}
         Polycystic Ovary Syndrome
       </h1>
       <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-        Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-        gentrify.
+        Enter your details to receive a personalized PCOS risk assessment powered by advanced AI.
       </p>
     </div>
     <form
@@ -58,40 +57,80 @@ endblock %} {% block body %}
       class="w-full lg:w-2/3 md:w-4/5 mx-auto"
     >
       <div class="flex flex-wrap -m-2">
-        {% for feature in pcos_features %} {% if loop.index0 != 40 %}
+        {% for feature in pcos_features[0] %} {% if loop.index0 != 32 %}
         <div class="p-2 w-1/2 sm:w-1/4">
           <div class="relative">
-            <label for="{{ feature }}" class="leading-7 text-sm text-gray-400"
+            <label for="{{ feature }}" class="leading-7 text-sm font-semibold text-gray-400"
               >{{ feature }}</label
             >
             <input
               required
               step="0.01"
               type="number"
-              value="{{ values[loop.index0] }}"
+              value="{{ values[0][loop.index0] }}"
               id="{{ feature }}"
               name="{{ feature }}"
               class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-pink-500 focus:bg-gray-900 focus:ring-2 focus:ring-pink-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
         </div>
+        {% endif %} {% endfor %} {% for feature in pcos_features[2] %} {% if
+        loop.index0 != 8 %}
+        <div class="p-2 w-1/2 sm:w-1/4">
+          <div class="relative">
+            <label
+              for="{{ feature }}"
+              class="leading-7 text-sm font-semibold text-gray-400"
+              >{{ feature }}</label
+            >
+            <select
+              value="{{ values[2][loop.index0] }}"
+              id="{{ feature }}"
+              name="{{ feature }}"
+              class="block p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500 w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-pink-500 focus:bg-gray-900 focus:ring-2 focus:ring-pink-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            >
+              {% if values[2][loop.index0] == 1 %}
+              <option value="1" selected>Yes</option>
+              <option value="0">No</option>
+              {% elif values[2][loop.index0] == 0 %}
+              <option value="1">Yes</option>
+              <option value="0" selected>No</option>
+              {% endif %}
+            </select>
+          </div>
+        </div>
         {% endif %} {% endfor %}
         <div class="p-2 w-full">
           <div class="relative">
             <label
-              for="{{ pcos_features[40] }}"
-              class="leading-7 text-sm text-gray-400"
-              >{{ pcos_features[40] }}</label
+              for="{{ pcos_features[1] }}"
+              class="leading-7 text-sm font-semibold text-gray-400"
+              >{{ pcos_features[1] }}</label
             >
-            <input
-              required
-              value="{{ values[40] }}"
-              step="0.01"
-              type="number"
-              id="{{ pcos_features[40] }}"
-              name="{{ pcos_features[40] }}"
-              class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-pink-500 focus:bg-gray-900 focus:ring-2 focus:ring-pink-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
+            <select
+              value="{{ values[1] }}"
+              id="{{ pcos_features[1] }}"
+              name="{{ pcos_features[1] }}"
+              class="block p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500 w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-pink-500 focus:bg-gray-900 focus:ring-2 focus:ring-pink-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            >
+              <option class="bgopt" value="11">A+</option>
+              <option class="bgopt" value="12">A-</option>
+              <option class="bgopt" value="13">B+</option>
+              <option class="bgopt" value="14">B-</option>
+              <option class="bgopt" value="15">O+</option>
+              <option class="bgopt" value="16">O-</option>
+              <option class="bgopt" value="17">AB+</option>
+              <option class="bgopt" value="18">AB-</option>
+              <!-- Add Selected Attribute -->
+              <script>
+                var a = Array.from(document.getElementsByClassName("bgopt"));
+                Array.prototype.map.call(a, (item) => {
+                  if (item.value === "{{ values[1] }}") {
+                    item.setAttribute("selected", "selected");
+                  }
+                });
+              </script>
+            </select>
           </div>
         </div>
         <div class="p-2 w-full">

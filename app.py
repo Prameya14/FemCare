@@ -91,9 +91,11 @@ class Api_service:
 
 # PCOS Setup
 
-pcos_features = ['Age (yrs)', 'Weight (Kg)', 'Height(Cm)', 'BMI', 'Blood Group', 'Pulse rate(bpm)', 'RR (breaths/min)', 'Hb(g/dl)', 'Cycle(R/I)', 'Cycle length(days)', 'Marraige Status (Yrs)', 'Pregnant(Y/N)', 'No. of aborptions', 'I   beta-HCG(mIU/mL)', 'II    beta-HCG(mIU/mL)', 'FSH(mIU/mL)', 'LH(mIU/mL)', 'FSH/LH', 'Hip(inch)', 'Waist(inch)', 'Waist:Hip Ratio', 'TSH (mIU/L)', 'AMH(ng/mL)', 'PRL(ng/mL)', 'Vit D3 (ng/mL)', 'PRG(ng/mL)', 'RBS(mg/dl)', 'Weight gain(Y/N)', 'hair growth(Y/N)', 'Skin darkening (Y/N)', 'Hair loss(Y/N)', 'Pimples(Y/N)', 'Fast food (Y/N)', 'Reg.Exercise(Y/N)', 'BP _Systolic (mmHg)', 'BP _Diastolic (mmHg)', 'Follicle No. (L)', 'Follicle No. (R)', 'Avg. F size (L) (mm)', 'Avg. F size (R) (mm)', 'Endometrium (mm)']
+pcos_features = [['Age (yrs)', 'Weight (Kg)', 'Height(Cm)', 'BMI', 'Pulse rate(bpm)', 'RR (breaths/min)', 'Hb(g/dl)', 'Cycle(R/I)', 'Cycle length(days)', 'Marraige Status (Yrs)', 'No. of aborptions', 'I   beta-HCG(mIU/mL)', 'II    beta-HCG(mIU/mL)', 'FSH(mIU/mL)', 'LH(mIU/mL)', 'FSH/LH', 'Hip(inch)', 'Waist(inch)', 'Waist:Hip Ratio', 'TSH (mIU/L)', 'AMH(ng/mL)', 'PRL(ng/mL)', 'Vit D3 (ng/mL)', 'PRG(ng/mL)', 'RBS(mg/dl)', 'BP _Systolic (mmHg)', 'BP _Diastolic (mmHg)', 'Follicle No. (L)', 'Follicle No. (R)', 'Avg. F size (L) (mm)', 'Avg. F size (R) (mm)', 'Endometrium (mm)'], 'Blood Group', ['Pregnant(Y/N)', 'Weight gain(Y/N)', 'hair growth(Y/N)', 'Skin darkening (Y/N)', 'Hair loss(Y/N)', 'Pimples(Y/N)', 'Fast food (Y/N)', 'Reg.Exercise(Y/N)']]
 
-values = [33, 89.0, 163.0, 33.5, 12, 78, 22, 10.8, 4, 7, 6.0, 1, 0, 381.99, 15.0, 3.45, 0.72, 4.791666667, 46, 40, 0.8695652174, 0.73, 0.7, 15.23, 16.7, 0.28, 100.0, 1, 0, 1, 1, 1, 1.0, 0, 120, 80, 13, 12, 19.0, 18.0, 7.9]
+pcos_features_all = ['Age (yrs)', 'Weight (Kg)', 'Height(Cm)', 'BMI', 'Blood Group', 'Pulse rate(bpm)', 'RR (breaths/min)', 'Hb(g/dl)', 'Cycle(R/I)', 'Cycle length(days)', 'Marraige Status (Yrs)', 'Pregnant(Y/N)', 'No. of aborptions', 'I   beta-HCG(mIU/mL)', 'II    beta-HCG(mIU/mL)', 'FSH(mIU/mL)', 'LH(mIU/mL)', 'FSH/LH', 'Hip(inch)', 'Waist(inch)', 'Waist:Hip Ratio', 'TSH (mIU/L)', 'AMH(ng/mL)', 'PRL(ng/mL)', 'Vit D3 (ng/mL)', 'PRG(ng/mL)', 'RBS(mg/dl)', 'Weight gain(Y/N)', 'hair growth(Y/N)', 'Skin darkening (Y/N)', 'Hair loss(Y/N)', 'Pimples(Y/N)', 'Fast food (Y/N)', 'Reg.Exercise(Y/N)', 'BP _Systolic (mmHg)', 'BP _Diastolic (mmHg)', 'Follicle No. (L)', 'Follicle No. (R)', 'Avg. F size (L) (mm)', 'Avg. F size (R) (mm)', 'Endometrium (mm)']
+
+values = [[33, 89.0, 163.0, 33.5, 78, 22, 10.8, 4, 7, 6.0, 0, 381.99, 15.0, 3.45, 0.72, 4.791666667, 46, 40, 0.8695652174, 0.73, 0.7, 15.23, 16.7, 0.28, 100.0, 120, 80, 13, 12, 19.0, 18.0, 7.9], 12, [1, 1, 0, 1, 1, 1, 1.0, 0]]
 
 # ========================================================================================
 
@@ -156,15 +158,15 @@ def cervical_cancer():
 def pcos():
     if request.method == "POST":
         pred = [[]]
-        for item in pcos_features:
+        for item in pcos_features_all:
             pred[0].append(request.form.get(item))
 
         pcos_model = joblib.load(r"models\pcos.joblib")
         prediction = list(pcos_model.predict(pred))[0]
         if prediction == 1:
-            return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="There, session=session is a high chance of PCOS for these parameters.")
+            return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="There is a high chance of PCOS for these parameters.")
         else:
-            return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="There, session=session is a low chance of PCOS for these parameters.")
+            return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="There is a low chance of PCOS for these parameters.")
     return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="", session=session)
 
 @app.route("/breast-cancer", methods=["GET", "POST"])
