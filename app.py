@@ -10,6 +10,7 @@ import shutil
 from flask_pymongo import PyMongo
 import requests
 import tensorflow as tf
+import os
 # import json
 
 app = Flask(__name__, static_folder="Static", template_folder="Templates")
@@ -30,8 +31,7 @@ mongo = PyMongo(app)
 # ========================================================================================
 
 # Cervical Cancer Setup
-
-model = joblib.load("models\cervical_cancer.joblib")
+model = joblib.load(r"models/cervical_cancer.joblib")
 features = [["Age", "Number of sexual partners", "First sexual intercourse", "Num of pregnancies", "Smokes (years)", "Smokes (packs/year)", "Hormonal Contraceptives (years)", "IUD (years)", "STDs: Number of diagnosis"], ["condylomatosis", "cervical condylomatosis", "vaginal condylomatosis", "vulvo-perineal condylomatosis", "syphilis", "pelvic inflammatory disease", "genital herpes", "molluscum contagiosum", "AIDS", "HIV", "Hepatitis B", "HPV"], ["Cancer", "CIN", "hpv"]]
 
 mainsfeatures = ["Age", "Number of sexual partners", "First sexual intercourse", "Num of pregnancies", "Smokes (years)", "Smokes (packs/year)", "Hormonal Contraceptives (years)", "IUD (years)", "STDs", "STDs (number)", "condylomatosis", "cervical condylomatosis", "vaginal condylomatosis", "vulvo-perineal condylomatosis", "syphilis", "pelvic inflammatory disease", "genital herpes", "molluscum contagiosum", "AIDS", "HIV", "Hepatitis B", "HPV", "STDs: Number of diagnosis", "Cancer", "CIN", "HPV"]
@@ -40,18 +40,18 @@ mainsfeatures = ["Age", "Number of sexual partners", "First sexual intercourse",
 
 # Breast Cancer Setup
 
-json_file = open(r"models\breast_cancer.json", "r")
+json_file = open(r"models/breast_cancer.json", "r")
 loaded_model_json = json_file.read()
 json_file.close()
 loaded_model = model_from_json(loaded_model_json)
-loaded_model.load_weights(r"models\breast_cancer.h5")
+loaded_model.load_weights(r"models/breast_cancer.h5")
 loaded_model.compile(
     loss="binary_crossentropy", optimizer="rmsprop", metrics=["accuracy"]
 )
 
 def save_and_get_pred_img(image):
     defrance = str(random.randint(1, 100000))
-    file = r"C:\Users\prame\OneDrive - 45ktw4\Documents\Intel India AI Impact Festival 2024\FemCare"
+    file = r"/home/prameya/femcare"
     file_path = os.path.join(file, defrance)
     os.makedirs(file_path)
     filename = secure_filename(image.filename)
@@ -109,7 +109,7 @@ target_names = {
     'MC': 'Mucinous Carcinoma'
 }
 
-model = tf.keras.models.load_model("models/ovarian-cancer.h5")
+ocmodel = tf.keras.models.load_model("models/ovarian-cancer.h5")
 
 def load_and_prep_image(filename, img_shape=224):
     img = tf.io.read_file(filename)
@@ -161,7 +161,7 @@ def pcos():
         for item in pcos_features_all:
             pred[0].append(request.form.get(item))
 
-        pcos_model = joblib.load(r"models\pcos.joblib")
+        pcos_model = joblib.load(r"models/pcos.joblib")
         prediction = list(pcos_model.predict(pred))[0]
         if prediction == 1:
             return render_template("pcos.html", pcos_features=pcos_features, values=values, pcos_result="There is a high chance of PCOS for these parameters.")
@@ -186,7 +186,7 @@ def ovarian_cancer():
         filename = secure_filename(image.filename)
         file_path = os.path.join('Uploads', filename)
         image.save(file_path)
-        result = pred_and_plot(model, file_path, target_names)
+        result = pred_and_plot(ocmodel, file_path, target_names)
         os.remove(file_path)
         return render_template("ovarian-cancer.html", oc_result=result, session=session)
     return render_template("ovarian-cancer.html", oc_result="", session=session)
@@ -241,7 +241,6 @@ def signin():
             session['user'] = {"username": user["username"], "email": user["email"]}
         return redirect("/")
 
-    print(session)
     return render_template("login.html", session=session)
 
 @app.route("/logout")
@@ -250,5 +249,5 @@ def logout():
     return redirect('/signin')
 
 if __name__ == "__main__":
-    app.run(debug=True, host="192.168.0.105", port=5001)
+    app.run(debug=True, host="0.0.0.0", port="5001")
     
