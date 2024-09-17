@@ -1,7 +1,7 @@
 {% extends "navbar.html" %} {% block title %} Polycystic Ovary Syndrome {%
 endblock %} {% block body %}
 <section class="text-gray-400 body-font relative">
-  {% if 'user' in session %}
+  {% if 'user' in session and 'pcos' in session['user']['access'] %}
   <div class="container px-5 py-16 mx-auto">
     {% if pcos_result != "" %}
     <div id="alert-1" class="mb-2 text-center py-4 lg:px-4">
@@ -27,7 +27,7 @@ endblock %} {% block body %}
         Polycystic Ovary Syndrome
       </h1>
       <p class="lg:w-2/3 text-gray-700 dark:text-gray-200 mx-auto leading-relaxed text-base">
-        Enter your details to receive a personalized PCOS risk assessment
+        Enter the details to receive a personalized PCOS risk assessment
         powered by advanced AI.
       </p>
     </div>
@@ -39,9 +39,11 @@ endblock %} {% block body %}
           <div class="relative">
             <label for="{{ feature }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{
               feature }}</label>
-            <input required step="0.01" type="number" value="{{ values[0][loop.index0] }}" id="{{ feature }}"
-              name="{{ feature }}"
+            <input required step="0.01" type="number" id="{{ feature }}" name="{{ feature }}"
               class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500 dark:shadow-sm-light" />
+            <!-- <input required step="0.01" type="number" value="{{ values[0][loop.index0] }}" id="{{ feature }}"
+              name="{{ feature }}"
+              class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500 dark:shadow-sm-light" /> -->
           </div>
         </div>
         {% endif %} {% endfor %} {% for feature in pcos_features[2] %} {% if
@@ -52,13 +54,15 @@ endblock %} {% block body %}
               feature }}</label>
             <select value="{{ values[2][loop.index0] }}" id="{{ feature }}" name="{{ feature }}"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500">
-              {% if values[2][loop.index0] == 1 %}
+              <!-- {% if values[2][loop.index0] == 1 %}
               <option value="1" selected>Yes</option>
               <option value="0">No</option>
               {% elif values[2][loop.index0] == 0 %}
               <option value="1">Yes</option>
               <option value="0" selected>No</option>
-              {% endif %}
+              {% endif %} -->
+              <option value="1">Yes</option>
+              <option value="0">No</option>
             </select>
           </div>
         </div>
@@ -79,20 +83,21 @@ endblock %} {% block body %}
               <option class="bgopt" value="17">AB+</option>
               <option class="bgopt" value="18">AB-</option>
               <!-- Add Selected Attribute -->
-              <script>
+              <!-- <script>
                 var a = Array.from(document.getElementsByClassName("bgopt"));
                 Array.prototype.map.call(a, (item) => {
                   if (item.value === "{{ values[1] }}") {
                     item.setAttribute("selected", "selected");
                   }
                 });
-              </script>
+              </script> -->
             </select>
           </div>
         </div>
         <div class="p-2 w-full">
           <button type="submit"
-            class="text-white block bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4 m-auto">
+            class="text-white block bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4 m-auto"
+            style="margin: auto !important;">
             Submit
           </button>
         </div>

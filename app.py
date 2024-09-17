@@ -238,7 +238,7 @@ def signin():
         data = dict(request.form)
         user = mongo.db.users.find_one(data)
         if (user != None):
-            session['user'] = {"username": user["username"], "email": user["email"]}
+            session['user'] = {"username": user["username"], "email": user["email"], "access": user["access"]}
         return redirect("/")
 
     return render_template("login.html", session=session)
@@ -250,4 +250,3 @@ def logout():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port="5001")
-    

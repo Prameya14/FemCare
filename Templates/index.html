@@ -2,7 +2,8 @@
 %}
 
 <section id="about" class="text-gray-400 dark:bg-gray-900 body-font">
-  <div class="container mx-auto flex px-5 pt-6 pb-12 items-center justify-center flex-col">
+  <div class="container mx-auto flex px-5 pt-6 py-8 items-center justify-center flex-col"
+    style="padding-top: 1.5rem !important;">
     <img class="logo lg:w-1/6 md:w-2/6 w-3/6 my-10 object-cover object-center rounded-full" alt="hero"
       src="{{ url_for('static',filename='img/FemCare.png') }}" />
     <section class="bg-white dark:bg-gray-900">
@@ -30,7 +31,7 @@
         </p>
         <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <a href="#"
-            class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-primary-300 dark:focus:ring-pink-800">
+            class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-300 dark:focus:ring-pink-800">
             Learn more
             <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -123,7 +124,7 @@
     <div class="flex flex-wrap w-full mb-20">
       <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
         <h1 class="sm:text-3xl text-2xl font-bold title-font mb-2 text-black dark:text-white">
-          SDGs Impacted
+          Our Impact on SDGs
         </h1>
         <div class="h-1 w-20 bg-pink-500 rounded"></div>
       </div>
@@ -134,7 +135,7 @@
         societal advancement.
       </p>
     </div>
-    <div class="flex flex-wrap px-4 -m-4">
+    <div class="flex flex-wrap px-4 -m-4 justify-center">
       <div class="xl:w-1/4 md:w-1/2 p-4">
         <div
           class="lg:min-h-[28rem] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -535,11 +536,225 @@
   </div>
 </section> -->
 
+<section id="pricing" class="bg-white dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-12 lg:px-6">
+    <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+      <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">Find Your Perfect Care</h2>
+      <p class="mb-5 font-normal text-gray-500 sm:text-xl dark:text-gray-400">Select the plan that aligns with your
+        professional needs, offering the right tools for efficient diagnostics, advanced AI solutions, and comprehensive
+        support.</p>
+    </div>
+    <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+      <!-- Pricing Card -->
+      <div
+        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+        <h3 class="mb-4 text-2xl font-semibold">Clarity</h3>
+        <p class="font-normal text-gray-500 sm:text-lg dark:text-gray-400">Personalized care and diagnostics, simple and
+          hassle-free.</p>
+        <div class="flex justify-center items-baseline my-8">
+          <span class="mr-2 text-5xl font-extrabold">₹499</span>
+          <!-- <span class="text-gray-500 dark:text-gray-400">/month</span> -->
+        </div>
+        <!-- List -->
+        <ul role="list" class="mb-8 space-y-4 text-left">
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>No setup, or hidden fees</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span><span class="font-semibold">FemBot: </span>Personal health assistant.</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span><span class="font-semibold">Journal: </span>Library of gynecological health.</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span><span class="font-semibold">AI Model: </span>1 diagnostic model.</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-4 h-4 fill-red-500 pl-1 mr-1 text-green-500 dark:text-green-400"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 490 490"
+              xml:space="preserve">
+              <polygon points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490 
+	489.292,457.678 277.331,245.004 489.292,32.337 " />
+            </svg>
+            <span><span class="font-semibold">Web Access:</span> Full access to all features.</span>
+          </li>
+        </ul>
+        <a href="#"
+          class="text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-pink-900">Buy
+          now on thekidcompany</a>
+      </div>
+      <!-- Pricing Card -->
+      <div
+        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+        <h3 class="mb-4 text-2xl font-semibold">Elevate</h3>
+        <p class="font-normal text-gray-500 sm:text-lg dark:text-gray-400">Enhanced diagnostics and support for
+          empowered health decisions.</p>
+        <div class="flex justify-center items-baseline my-8">
+          <span class="mr-2 text-5xl font-extrabold">₹799</span>
+          <!-- <span class="text-gray-500 dark:text-gray-400">/month</span> -->
+        </div>
+        <!-- List -->
+        <ul role="list" class="mb-8 space-y-4 text-left">
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>No setup, or hidden fees</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span><span class="font-semibold">FemBot: </span>Personal health assistant.</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span><span class="font-semibold">Journal: </span>Library of gynecological health.</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span><span class="font-semibold">AI Model: </span>2 diagnostic models.</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-4 h-4 fill-red-500 pl-1 mr-1 text-green-500 dark:text-green-400"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 490 490"
+              xml:space="preserve">
+              <polygon points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490 
+	489.292,457.678 277.331,245.004 489.292,32.337 " />
+            </svg>
+            <span><span class="font-semibold">Web Access:</span> Full access to all features.</span>
+          </li>
+        </ul>
+        <a href="#"
+          class="text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-pink-900">Buy
+          now on thekidcompany</a>
+      </div>
+      <!-- Pricing Card -->
+      <div
+        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+        <h3 class="mb-4 text-2xl font-semibold">Insight</h3>
+        <p class="font-normal text-gray-500 sm:text-lg dark:text-gray-400">Complete health insights with our most
+          advanced diagnostic tools.</p>
+        <div class="flex justify-center items-baseline my-8">
+          <span class="mr-2 text-5xl font-extrabold">₹999</span>
+          <!-- <span class="text-gray-500 dark:text-gray-400">/month</span> -->
+        </div>
+        <!-- List -->
+        <ul role="list" class="mb-8 space-y-4 text-left">
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span>No setup, or hidden fees</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span><span class="font-semibold">FemBot: </span>Personal health assistant.</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span><span class="font-semibold">Journal: </span>Library of gynecological health.</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span><span class="font-semibold">AI Model: </span>4 diagnostic model.</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <!-- Icon -->
+            <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span><span class="font-semibold">Web Access:</span> Full access to all features.</span>
+          </li>
+        </ul>
+        <a href="#"
+          class="text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-pink-900">Buy
+          now on thekidcompany</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="team" class="bg-white dark:bg-gray-900">
   <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
     <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
       <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
-        Our Team
+        Meet Our Experts
       </h2>
       <p class="font-normal text-gray-500 sm:text-xl dark:text-gray-400">
         Meet the dedicated team combining expertise in AI, research, and

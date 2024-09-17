@@ -7,7 +7,11 @@
   <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/x-icon" />
   <style>
     #myMain {
-      min-height: 78vh;
+      min-height: 81vh;
+    }
+
+    .py-16 {
+      padding-top: 4rem !important;
     }
   </style>
   <link href="{{url_for('static',filename='css/main.css')}}" rel="stylesheet" />
@@ -89,9 +93,13 @@
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink-700 md:p-0 dark:text-white md:dark:hover:text-pink-500 dark:hover:bg-gray-700 dark:hover:text-pink-500 md:dark:hover:bg-transparent dark:border-gray-700"
                 aria-current="page">Home</a>
             </li>
-            <li>
+            <!-- <li>
               <a href="/#sustainability"
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink-700 md:p-0 dark:text-white md:dark:hover:text-pink-500 dark:hover:bg-gray-700 dark:hover:text-pink-500 md:dark:hover:bg-transparent dark:border-gray-700">Sustainability</a>
+            </li> -->
+            <li>
+              <a href="/#pricing"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-pink-700 md:p-0 dark:text-white md:dark:hover:text-pink-500 dark:hover:bg-gray-700 dark:hover:text-pink-500 md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
             </li>
             <li>
               <a href="/#team"
@@ -118,7 +126,7 @@
         </div>
       </div>
       <div id="mega-menu-full-dropdown"
-        class="mt-1 border-gray-200 shadow-sm bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br border-y dark:bg-gray-800 dark:border-gray-600">
+        class="mt-1 border-gray-200 shadow-sm bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 border-y dark:bg-gray-800 dark:border-gray-600">
         <div class="grid max-w-screen-xl px-4 py-1 mx-auto text-gray-900 dark:text-white sm:grid-cols-4 md:px-6">
           <a href="/cervical-cancer" class="text-center block p-3 rounded-lg hover:bg-pink-500 dark:hover:bg-pink-500">
             <div class="font-semibold">Cervical Cancer</div>
@@ -142,10 +150,10 @@
 
     <section id="fembot">
       <button data-modal-target="bottom-right-modal" data-modal-toggle="bottom-right-modal"
-        class="fixed bottom-0 right-0 mb-4 mr-4 block w-auto text-white bg-pink-700 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-pink-600 rounded-full dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+        class="fixed bottom-0 right-0 mb-4 mr-4 block w-auto text-white bg-pink-700 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-pink-600 rounded-full dark:hover:bg-pink-700 dark:focus:ring-pink-800"
         type="button">
-        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor" viewBox="0 0 20 18">
+        <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+          viewBox="0 0 20 18">
           <path
             d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.546l3.2 3.659a1 1 0 0 0 1.506 0L13.454 14H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-8 10H5a1 1 0 0 1 0-2h5a1 1 0 1 1 0 2Zm5-4H5a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2Z" />
         </svg>
@@ -239,7 +247,7 @@
               const botHtml = `
                   <div class="flex items-start gap-2.5">
                   <img class="logo w-8 h-8 rounded-full" src="{{ url_for('static', filename='img/FemCare.png') }}" alt="FemBot">
-                  <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-tr-lg rounded-br-lg rounded-bl-lg dark:bg-pink-400">
+                  <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-pink-200 rounded-tr-lg rounded-br-lg rounded-bl-lg dark:bg-pink-400">
                       <div class="flex items-center space-x-2 rtl:space-x-reverse">
                         <span class="text-sm font-semibold text-gray-900">FemBot</span>
                         <span class="text-sm font-normal text-gray-900">${str_time}</span>

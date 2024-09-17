@@ -1,7 +1,7 @@
 {% extends "navbar.html" %} {% block title %} Breast Cancer {% endblock %} {%
 block body %}
 <section class="text-gray-400 body-font relative">
-  {% if 'user' in session %}
+  {% if 'user' in session and 'bc' in session['user']['access'] %}
   <div class="min-h-class container px-5 py-16 mx-auto">
     {% if bc_result != "" %}
     <div id="alert-1" class="mb-2 text-center py-4 lg:px-4">
@@ -27,7 +27,7 @@ block body %}
         Breast Cancer
       </h1>
       <p class="lg:w-2/3 text-gray-700 dark:text-gray-200 mx-auto leading-relaxed text-base">
-        Upload your screening image and submit the form.
+        Upload the histopathology image to receive breast cancer risk assessment powered by advanced AI.
       </p>
     </div>
     <form enctype="multipart/form-data" method="post" action="/breast-cancer" class="lg:w-1/2 md:w-2/3 mx-auto">
