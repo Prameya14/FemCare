@@ -1,6 +1,6 @@
 {% extends "navbar.html" %} {% block title %} Breast Cancer {% endblock %} {%
 block body %}
-<section class="text-gray-400 body-font relative">
+<section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]" class="text-gray-400 body-font relative">
   {% if 'user' in session and 'bc' in session['user']['access'] %}
   <div class="min-h-class container px-5 py-16 mx-auto">
     {% if bc_result != "" %}
@@ -70,7 +70,7 @@ block body %}
         <p class="mb-4 text-lg font-normal text-gray-500 dark:text-gray-400">
           Sorry, we can't let you use this product. You'll have to buy our
           subscription
-          <span class="underline"><a href="">@thekidcompany</a></span> and then
+          <span class="underline"><a target="_blank" href="https://thekidcompany.in/store/2f26853/">@thekidcompany</a></span> and then
           sign in <span class="underline"><a href="/signin">here</a></span>.
         </p>
         <a href="/signin"

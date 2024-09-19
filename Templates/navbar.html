@@ -148,6 +148,7 @@
   <div id="myMain" class="mt-60 sm:mt-24">
     {% block body %} {% endblock %}
 
+    {% if 'user' in session %}
     <section id="fembot">
       <button data-modal-target="bottom-right-modal" data-modal-toggle="bottom-right-modal"
         class="fixed bottom-0 right-0 mb-4 mr-4 block w-auto text-white bg-pink-700 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-pink-600 rounded-full dark:hover:bg-pink-700 dark:focus:ring-pink-800"
@@ -261,6 +262,7 @@
         });
       </script>
     </section>
+    {% endif %}
   </div>
 
   <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">

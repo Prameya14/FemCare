@@ -1,7 +1,8 @@
 {% extends "navbar.html" %} {% block title %} Home {% endblock %} {% block body
 %}
 
-<section id="about" class="text-gray-400 dark:bg-gray-900 body-font">
+<!-- <section id="about" class="text-gray-400 dark:bg-gray-900 body-font"> -->
+<section id="about" class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
   <div class="container mx-auto flex px-5 pt-6 py-8 items-center justify-center flex-col"
     style="padding-top: 1.5rem !important;">
     <img class="logo lg:w-1/6 md:w-2/6 w-3/6 my-10 object-cover object-center rounded-full" alt="hero"
@@ -72,25 +73,28 @@
                 </div>
                 <!-- Modal body -->
                 <div class="p-4 md:p-5 space-y-4">
-                  <iframe class="mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl"
+                  <!-- <iframe class="mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl"
                     src="https://www.youtube.com/embed/8HhKFpyj9qA?si=kNHZi61ldnWFpT7-" title="YouTube Video Player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                    allowfullscreen></iframe> -->
+
+                  <video class="w-full h-auto max-w-full border border-gray-200 rounded-lg dark:border-gray-700"
+                    controls>
+                    <source src="{{ url_for('static', filename='video/NaariNurture Final Pitch.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+
                 </div>
                 <!-- Modal footer -->
                 <div
                   class="flex items-center p-4 md:p-5 space-x-3 rtl:space-x-reverse border-t border-gray-200 rounded-b dark:border-gray-600">
-                  <a href="https://www.youtube.com/@prameyamohanty" target="_blank" data-modal-hide="large-modal"
+                  <a href="https://www.youtube.com/@FemCare-IW" target="_blank" data-modal-hide="large-modal"
                     type="button"
-                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-                    Subscribe
-                  </a>
-                  <a href="https://www.youtube.com/watch?v=hI6UJ62MGK8" target="_blank" data-modal-hide="large-modal"
-                    type="button"
-                    class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-pink-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                    class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 hover:bg-red-800 dark:bg-red-600 dark:hover:bg-red-700">
                     YouTube
                   </a>
+                  <a href="https://www.instagram.com/femcare.insightfulwellness/" target="_blank" data-modal-hide="large-modal" type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Instagram</a>
                 </div>
               </div>
             </div>
@@ -119,7 +123,7 @@
   </div>
 </section>
 
-<section id="sustainability" class="pt-12 text-gray-400 body-font dark:bg-gray-900">
+<section id="sustainability" class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]" class="pt-12 text-gray-400 body-font dark:bg-gray-900">
   <div class="container px-5 py-12 mx-auto">
     <div class="flex flex-wrap w-full mb-20">
       <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
@@ -536,7 +540,7 @@
   </div>
 </section> -->
 
-<section id="pricing" class="bg-white dark:bg-gray-900">
+<section id="pricing" class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]" class="bg-white dark:bg-gray-900">
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-12 lg:px-6">
     <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
       <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">Find Your Perfect Care</h2>
@@ -608,7 +612,8 @@
             <span><span class="font-semibold">Web Access:</span> Full access to all features.</span>
           </li>
         </ul>
-        <a href="#"
+        <a target="_blank"
+          href="https://thekidcompany.in/product/femcare-insightful-wellness-clarity-plan-essential-health-assistant-diagnostics/"
           class="text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-pink-900">Buy
           now on thekidcompany</a>
       </div>
@@ -675,7 +680,8 @@
             <span><span class="font-semibold">Web Access:</span> Full access to all features.</span>
           </li>
         </ul>
-        <a href="#"
+        <a target="_blank"
+          href="https://thekidcompany.in/product/femcare-insightful-wellness-elevate-plan-advanced-care-with-dual-diagnostics/"
           class="text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-pink-900">Buy
           now on thekidcompany</a>
       </div>
@@ -742,7 +748,8 @@
             <span><span class="font-semibold">Web Access:</span> Full access to all features.</span>
           </li>
         </ul>
-        <a href="#"
+        <a target="_blank"
+          href="https://thekidcompany.in/product/femcare-insightful-wellness-insight-plan-premium-health-insights-full-diagnostics/"
           class="text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-pink-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-pink-900">Buy
           now on thekidcompany</a>
       </div>
@@ -750,7 +757,7 @@
   </div>
 </section>
 
-<section id="team" class="bg-white dark:bg-gray-900">
+<section id="team" class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]" class="bg-white dark:bg-gray-900">
   <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
     <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
       <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
