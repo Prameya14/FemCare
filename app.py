@@ -239,9 +239,11 @@ def signin():
         user = mongo.db.users.find_one(data)
         if (user != None):
             session['user'] = {"username": user["username"], "email": user["email"], "access": user["access"]}
-        return redirect("/")
+            return render_template("login.html", session=session, log=True)
+        else:
+            return render_template('login.html', session=session, log=False)
 
-    return render_template("login.html", session=session)
+    return render_template("login.html", session=session, log=None)
 
 @app.route("/logout")
 def logout():
