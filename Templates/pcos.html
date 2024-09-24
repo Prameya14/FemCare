@@ -1,89 +1,92 @@
 {% extends "navbar.html" %} {% block title %} Polycystic Ovary Syndrome {%
 endblock %} {% block body %}
-<section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]" class="text-gray-400 body-font relative">
+<section
+  class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]"
+  class="text-gray-400 body-font relative">
   {% if 'user' in session and 'pcos' in session['user']['access'] %}
   <div class="container px-5 py-16 mx-auto">
-    {% if pcos_result != "" %}
-    <div id="alert-1" class="mb-2 text-center py-4 lg:px-4">
-      <div
-        class="py-2 px-4 bg-pink-800 items-center text-pink-100 leading-none rounded-full justify-around flex lg:inline-flex"
-        role="alert">
-        <span class="flex rounded-full bg-pink-500 uppercase px-2 py-1 text-xs font-semibold mr-3">Result</span>
-        <span class="font-semibold mr-2 text-left flex-auto">{{ pcos_result }}</span>
-        <button type="button"
-          class="ms-auto -mx-1.5 -my-1.5 text-pink-400 rounded-lg focus:ring-2 focus:ring-pink-400 p-1.5 hover:bg-pink-200 inline-flex items-center justify-center h-8 w-8 dark:text-pink-400 dark:hover:bg-pink-700"
-          data-dismiss-target="#alert-1" aria-label="Close">
-          <span class="sr-only">Close</span>
-          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-          </svg>
-        </button>
+    <div class="bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700 pt-8">
+      {% if pcos_result != "" %}
+      <div id="alert-1" class="mb-2 text-center py-4 lg:px-4">
+        <div
+          class="py-2 px-4 bg-pink-800 items-center text-pink-100 leading-none rounded-full justify-around flex lg:inline-flex"
+          role="alert">
+          <span class="flex rounded-full bg-pink-500 uppercase px-2 py-1 text-xs font-semibold mr-3">Result</span>
+          <span class="font-semibold mr-2 text-left flex-auto">{{ pcos_result }}</span>
+          <button type="button"
+            class="ms-auto -mx-1.5 -my-1.5 text-pink-400 rounded-lg focus:ring-2 focus:ring-pink-400 p-1.5 hover:bg-pink-200 inline-flex items-center justify-center h-8 w-8 dark:text-pink-400 dark:hover:bg-pink-700"
+            data-dismiss-target="#alert-1" aria-label="Close">
+            <span class="sr-only">Close</span>
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
-    {% endif %}
-    <div class="flex flex-col text-center w-full mb-12">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 dark:text-white">
-        Polycystic Ovary Syndrome
-      </h1>
-      <p class="lg:w-2/3 text-gray-700 dark:text-gray-200 mx-auto leading-relaxed text-base">
-        Enter the details to receive a personalized PCOS risk assessment
-        powered by advanced AI.
-      </p>
-    </div>
+      {% endif %}
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 dark:text-white">
+          Polycystic Ovary Syndrome
+        </h1>
+        <p class="lg:w-2/3 text-gray-700 dark:text-gray-200 mx-auto leading-relaxed text-base">
+          Enter the details to receive a personalized PCOS risk assessment
+          powered by advanced AI.
+        </p>
+      </div>
 
-    <form id="myForm" method="post" action="/pcos" class="w-full lg:w-2/3 md:w-4/5 mx-auto">
-      <div class="flex flex-wrap -m-2">
-        {% for feature in pcos_features[0] %} {% if loop.index0 != 32 %}
-        <div class="p-2 w-1/2 sm:w-1/4">
-          <div class="relative">
-            <label for="{{ feature }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{
-              feature }}</label>
-            <input required step="0.01" type="number" id="{{ feature }}" name="{{ feature }}"
-              class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500 dark:shadow-sm-light" />
-            <!-- <input required step="0.01" type="number" value="{{ values[0][loop.index0] }}" id="{{ feature }}"
+      <form id="myForm" method="post" action="/pcos" class="w-full lg:w-2/3 md:w-4/5 mx-auto">
+        <div class="flex flex-wrap -m-2">
+          {% for feature in pcos_features[0] %} {% if loop.index0 != 32 %}
+          <div class="p-2 w-1/2 sm:w-1/4">
+            <div class="relative">
+              <label for="{{ feature }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{
+                feature }}</label>
+              <input required step="0.01" type="number" id="{{ feature }}" name="{{ feature }}"
+                class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500 dark:shadow-sm-light" />
+              <!-- <input required step="0.01" type="number" value="{{ values[0][loop.index0] }}" id="{{ feature }}"
               name="{{ feature }}"
               class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500 dark:shadow-sm-light" /> -->
+            </div>
           </div>
-        </div>
-        {% endif %} {% endfor %} {% for feature in pcos_features[2] %} {% if
-        loop.index0 != 8 %}
-        <div class="p-2 w-1/2 sm:w-1/4">
-          <div class="relative">
-            <label for="{{ feature }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{
-              feature }}</label>
-            <select value="{{ values[2][loop.index0] }}" id="{{ feature }}" name="{{ feature }}"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500">
-              <!-- {% if values[2][loop.index0] == 1 %}
+          {% endif %} {% endfor %} {% for feature in pcos_features[2] %} {% if
+          loop.index0 != 8 %}
+          <div class="p-2 w-1/2 sm:w-1/4">
+            <div class="relative">
+              <label for="{{ feature }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{
+                feature }}</label>
+              <select value="{{ values[2][loop.index0] }}" id="{{ feature }}" name="{{ feature }}"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500">
+                <!-- {% if values[2][loop.index0] == 1 %}
               <option value="1" selected>Yes</option>
               <option value="0">No</option>
               {% elif values[2][loop.index0] == 0 %}
               <option value="1">Yes</option>
               <option value="0" selected>No</option>
               {% endif %} -->
-              <option value="1">Yes</option>
-              <option value="0">No</option>
-            </select>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+            </div>
           </div>
-        </div>
-        {% endif %} {% endfor %}
-        <div class="p-2 w-full">
-          <div class="relative">
-            <label for="{{ pcos_features[1] }}"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{
-              pcos_features[1] }}</label>
-            <select value="{{ values[1] }}" id="{{ pcos_features[1] }}" name="{{ pcos_features[1] }}"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500">
-              <option class="bgopt" value="11">A+</option>
-              <option class="bgopt" value="12">A-</option>
-              <option class="bgopt" value="13">B+</option>
-              <option class="bgopt" value="14">B-</option>
-              <option class="bgopt" value="15">O+</option>
-              <option class="bgopt" value="16">O-</option>
-              <option class="bgopt" value="17">AB+</option>
-              <option class="bgopt" value="18">AB-</option>
-              <!-- Add Selected Attribute -->
-              <!-- <script>
+          {% endif %} {% endfor %}
+          <div class="p-2 w-full">
+            <div class="relative">
+              <label for="{{ pcos_features[1] }}"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{
+                pcos_features[1] }}</label>
+              <select value="{{ values[1] }}" id="{{ pcos_features[1] }}" name="{{ pcos_features[1] }}"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500">
+                <option class="bgopt" value="11">A+</option>
+                <option class="bgopt" value="12">A-</option>
+                <option class="bgopt" value="13">B+</option>
+                <option class="bgopt" value="14">B-</option>
+                <option class="bgopt" value="15">O+</option>
+                <option class="bgopt" value="16">O-</option>
+                <option class="bgopt" value="17">AB+</option>
+                <option class="bgopt" value="18">AB-</option>
+                <!-- Add Selected Attribute -->
+                <!-- <script>
                 var a = Array.from(document.getElementsByClassName("bgopt"));
                 Array.prototype.map.call(a, (item) => {
                   if (item.value === "{{ values[1] }}") {
@@ -91,29 +94,31 @@ endblock %} {% block body %}
                   }
                 });
               </script> -->
-            </select>
+              </select>
+            </div>
+          </div>
+          <div class="p-2 w-full">
+            <button type="submit"
+              class="text-white block bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4 m-auto"
+              style="margin: auto !important;">
+              Submit
+            </button>
+          </div>
+          <div class="p-2 w-full pt-8 mt-8 border-t border-gray-300 dark:border-gray-700 text-center">
+            <a class="text-pink-400">femcare1001@gmail.com</a>
+            <p class="leading-normal my-5 dark:text-gray-200">
+              Polycystic Ovary Syndrome <br />FemCare - Insightful Wellness
+            </p>
           </div>
         </div>
-        <div class="p-2 w-full">
-          <button type="submit"
-            class="text-white block bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4 m-auto"
-            style="margin: auto !important;">
-            Submit
-          </button>
-        </div>
-        <div class="p-2 w-full pt-8 mt-8 border-t border-gray-800 text-center">
-          <a class="text-pink-400">help@femcare.com</a>
-          <p class="leading-normal my-5">
-            Polycystic Ovary Syndrome <br />FemCare - Insightful Wellness
-          </p>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
   {% else %}
-  <section class="bg-white dark:bg-gray-900">
+  <div
+    class="bg-white dark:bg-gray-900 h-full bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-24 lg:px-6">
-      <div class="mx-auto max-w-screen-sm text-center">
+      <div class="bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700 p-4 mx-auto max-w-screen-sm text-center">
         <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-pink-600 dark:text-pink-500">
           404
         </h1>
@@ -123,7 +128,8 @@ endblock %} {% block body %}
         <p class="mb-4 text-lg font-normal text-gray-500 dark:text-gray-400">
           Sorry, we can't let you use this product. You'll have to buy our
           subscription
-          <span class="underline"><a target="_blank" href="https://thekidcompany.in/store/2f26853/">@thekidcompany</a></span> and then
+          <span class="underline"><a target="_blank"
+              href="https://thekidcompany.in/store/2f26853/">@thekidcompany</a></span> and then
           sign in <span class="underline"><a href="/signin">here</a></span>.
         </p>
         <a href="/signin"
@@ -131,7 +137,7 @@ endblock %} {% block body %}
           In</a>
       </div>
     </div>
-  </section>
+  </div>
   {% endif %}
 </section>
 {% endblock %}
