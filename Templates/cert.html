@@ -1,0 +1,45 @@
+{% extends "navbar.html" %} {% block title %} Certificate of Relevance {% endblock %}
+{% block body %}
+
+<section
+    class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]"
+    class="bg-white dark:bg-gray-900">
+    <div class="py-12 px-4 mx-auto max-w-screen-xl lg:py-20 lg:px-6">
+        <div class="mx-auto max-w-screen-lg text-center mb-8">
+            <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
+                Certificate of Relevance for our Diagnostic Parameters
+            </h2>
+            <p class="font-normal text-gray-500 sm:text-xl dark:text-gray-400">
+                Validated diagnostic parameters for early detection and management of gynecological diseases.
+            </p>
+        </div>
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-6">
+            <!-- Page 1 of Certificate -->
+            <div class="card">
+                <div class="card-body p-4">
+                    <img src="{{ url_for('static', filename='img/Page 1.jpg') }}" alt="Certificate Page 1"
+                        class="rounded-lg shadow-lg border">
+                </div>
+                <div class="card-footer">
+                    <p class="text-center text-base dark:text-gray-200 font-medium">Certificate of Relevance - Page 1
+                    </p>
+                </div>
+            </div>
+
+            <!-- Page 2 of Certificate -->
+            <div class="card">
+                <div class="card-body p-4">
+                    <img src="{{ url_for('static', filename='img/Page 2.jpg') }}" alt="Certificate Page 2"
+                        class="rounded-lg shadow-lg border">
+                </div>
+                <div class="card-footer">
+                    <p class="text-center text-base dark:text-gray-200 font-medium">Certificate of Relevance - Page 2
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

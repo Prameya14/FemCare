@@ -210,6 +210,10 @@ def article(article_slug):
     #         article = item
     return render_template("article.html", article=article, session=session)
 
+@app.route("/certificate-of-relevance")
+def certificate_of_relevance():
+    return render_template("cert.html")
+
 @app.route("/add", methods=["POST"])
 def add():
     article = request.json
