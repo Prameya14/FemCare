@@ -90,4 +90,4 @@ Validated diagnostic parameters for early detection and management of gynecologi
 For more information or inquiries, please contact:  
 **FemCare Team**  
 Email: femcare1001@gmail.com  
-Website: [www.femcare.com](http://www.femcare.life)
+Website: [www.femcare.life](http://www.femcare.life)
