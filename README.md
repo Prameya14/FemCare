@@ -72,7 +72,7 @@ FemCare directly contributes to the **United Nations Sustainable Development Goa
 
 ## 📜 License
 
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License – see the [LICENSE](./LICENSE) file for details.
 
 ## 🏆 Certificate of Relevance
 
