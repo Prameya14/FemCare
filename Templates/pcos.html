@@ -42,11 +42,11 @@ endblock %} {% block body %}
             <div class="relative">
               <label for="{{ feature }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{
                 feature }}</label>
-              <input required step="0.01" type="number" id="{{ feature }}" name="{{ feature }}"
-                class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500 dark:shadow-sm-light" />
-              <!-- <input required step="0.01" type="number" value="{{ values[0][loop.index0] }}" id="{{ feature }}"
+              <!-- <input required step="0.01" type="number" id="{{ feature }}" name="{{ feature }}"
+                class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500 dark:shadow-sm-light" /> -->
+              <input required step="0.01" type="number" value="{{ values[0][loop.index0] }}" id="{{ feature }}"
               name="{{ feature }}"
-              class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500 dark:shadow-sm-light" /> -->
+              class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500 dark:shadow-sm-light" />
             </div>
           </div>
           {% endif %} {% endfor %} {% for feature in pcos_features[2] %} {% if
