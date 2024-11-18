@@ -12,7 +12,7 @@
       <div class="px-4 mx-auto max-w-screen-xl text-center lg:px-12">
         <a href="/pcos"
           class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
-          role="alert">
+          role="alert" aria-label="FemCare is out! See what's new.">
           <span class="text-xs bg-pink-600 rounded-full text-white px-4 py-1.5 mr-3">New</span>
           <span class="text-sm font-medium">FemCare is out! See what's new</span>
           <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -108,18 +108,18 @@
           <span class="font-semibold text-gray-400 uppercase">FEATURED IN</span>
           <div
             class="flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:flex-row space-y-6 sm:space-y-0 flex-col sm:justify-between">
-            <a class="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 grayscale hover:grayscale-0">
+            <div class="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 grayscale hover:grayscale-0">
               <img src="{{ url_for('static', filename='img/asic.png') }}" alt="AISC Image" class="h-10" />
-            </a>
-            <a class="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 grayscale hover:grayscale-0">
+            </div>
+            <div class="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 grayscale hover:grayscale-0">
               <img src="{{ url_for('static', filename='img/cbse.png') }}" alt="CBSE Logo" class="h-16" />
-            </a>
-            <a class="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 grayscale hover:grayscale-0">
+            </div>
+            <div class="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 grayscale hover:grayscale-0">
               <img src="{{ url_for('static', filename='img/intel.png') }}" alt="Intel Logo" class="h-12" />
-            </a>
-            <a class="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 grayscale hover:grayscale-0">
+            </div>
+            <div class="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 grayscale hover:grayscale-0">
               <img src="{{ url_for('static', filename='img/1m1b.png') }}" alt="Intel Logo" class="h-14" />
-            </a>
+            </div>
           </div>
         </div>
       </div>
@@ -149,15 +149,15 @@
       <div class="xl:w-1/4 md:w-1/2 p-4">
         <div
           class="lg:min-h-[28rem] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
+          <div>
             <img class="rounded-t-lg" src="https://ourworldindata.org/images/published/Thumbnail-SDG-3.png" alt="" />
-          </a>
+          </div>
           <div class="p-5">
-            <h3 class="mb-2 tracking-widest text-pink-400 text-xs font-medium title-font">
+            <h5 class="mb-2 tracking-widest text-pink-400 text-xs font-medium title-font">
               SDG - 3
-            </h3>
-            <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Good Health and
-              Well-being</h5>
+            </h5>
+            <h3 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Good Health and
+              Well-being</h3>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">FemCare offers early diagnosis and risk
               assessments for
               gynecological diseases, reducing mortality and improving overall
@@ -169,14 +169,14 @@
       <div class="xl:w-1/4 md:w-1/2 p-4">
         <div
           class="lg:min-h-[28rem] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
+          <div>
             <img class="rounded-t-lg" src="https://ourworldindata.org/images/published/Thumbnail-SDG-4.png" alt="" />
-          </a>
+          </div>
           <div class="p-5">
-            <h3 class="mb-2 tracking-widest text-pink-400 text-xs font-medium title-font">
+            <h5 class="mb-2 tracking-widest text-pink-400 text-xs font-medium title-font">
               SDG - 4
-            </h3>
-            <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Quality Education</h5>
+            </h5>
+            <h3 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Quality Education</h3>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">FemCare educates women on gynecological health,
               enhancing their
               knowledge and promoting lifelong learning, thereby contributing to
@@ -187,14 +187,14 @@
       <div class="xl:w-1/4 md:w-1/2 p-4">
         <div
           class="lg:min-h-[28rem] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
+          <div>
             <img class="rounded-t-lg" src="https://ourworldindata.org/images/published/Thumbnail-SDG-5.png" alt="" />
-          </a>
+          </div>
           <div class="p-5">
-            <h3 class="mb-2 tracking-widest text-pink-400 text-xs font-medium title-font">
+            <h5 class="mb-2 tracking-widest text-pink-400 text-xs font-medium title-font">
               SDG - 5
-            </h3>
-            <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Gender Equality</h5>
+            </h5>
+            <h3 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Gender Equality</h3>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">By addressing health issues unique to women and
               providing tailored
               resources, FemCare empowers women, promotes gender-specific
@@ -205,15 +205,15 @@
       <div class="xl:w-1/4 md:w-1/2 p-4">
         <div
           class="lg:min-h-[28rem] max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
+          <div>
             <img class="rounded-t-lg" src="https://ourworldindata.org/images/published/Thumbnail-SDG-9.png" alt="" />
-          </a>
+          </div>
           <div class="p-5">
-            <h3 class="mb-2 tracking-widest text-pink-400 text-xs font-medium title-font">
+            <h5 class="mb-2 tracking-widest text-pink-400 text-xs font-medium title-font">
               SDG - 9
-            </h3>
-            <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Industry, Innovation,
-              and Infrastructure</h5>
+            </h5>
+            <h3 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Industry, Innovation,
+              and Infrastructure</h3>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Utilizing advanced AI and machine learning,
               FemCare fosters
               innovation in healthcare, contributing to sustainable
@@ -784,13 +784,13 @@
         <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="{{ url_for('static',filename='img/PRAMEYA.png') }}"
           alt="Prameya Mohanty" />
         <h3 class="mb-1 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          <a>Prameya Mohanty</a>
+          <span>Prameya Mohanty</span>
         </h3>
         <p class="text-lg font-semibold">Developer</p>
         <ul class="flex justify-center mt-4 space-x-4">
           <li>
             <a target="_blank" href="https://www.instagram.com/prameya_1046/"
-              class="text-[#39569c] hover:text-gray-900 dark:hover:text-white">
+              class="text-[#39569c] hover:text-gray-900 dark:hover:text-white" aria-label="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 48 48">
                 <path fill="#304ffe"
                   d="M41.67,13.48c-0.4,0.26-0.97,0.5-1.21,0.77c-0.09,0.09-0.14,0.19-0.12,0.29v1.03l-0.3,1.01l-0.3,1l-0.33,1.1 l-0.68,2.25l-0.66,2.22l-0.5,1.67c0,0.26-0.01,0.52-0.03,0.77c-0.07,0.96-0.27,1.88-0.59,2.74c-0.19,0.53-0.42,1.04-0.7,1.52 c-0.1,0.19-0.22,0.38-0.34,0.56c-0.4,0.63-0.88,1.21-1.41,1.72c-0.41,0.41-0.86,0.79-1.35,1.11c0,0,0,0-0.01,0 c-0.08,0.07-0.17,0.13-0.27,0.18c-0.31,0.21-0.64,0.39-0.98,0.55c-0.23,0.12-0.46,0.22-0.7,0.31c-0.05,0.03-0.11,0.05-0.16,0.07 c-0.57,0.27-1.23,0.45-1.89,0.54c-0.04,0.01-0.07,0.01-0.11,0.02c-0.4,0.07-0.79,0.13-1.19,0.16c-0.18,0.02-0.37,0.03-0.55,0.03 l-0.71-0.04l-3.42-0.18c0-0.01-0.01,0-0.01,0l-1.72-0.09c-0.13,0-0.27,0-0.4-0.01c-0.54-0.02-1.06-0.08-1.58-0.19 c-0.01,0-0.01,0-0.01,0c-0.95-0.18-1.86-0.5-2.71-0.93c-0.47-0.24-0.93-0.51-1.36-0.82c-0.18-0.13-0.35-0.27-0.52-0.42 c-0.48-0.4-0.91-0.83-1.31-1.27c-0.06-0.06-0.11-0.12-0.16-0.18c-0.06-0.06-0.12-0.13-0.17-0.19c-0.38-0.48-0.7-0.97-0.96-1.49 c-0.24-0.46-0.43-0.95-0.58-1.49c-0.06-0.19-0.11-0.37-0.15-0.57c-0.01-0.01-0.02-0.03-0.02-0.05c-0.1-0.41-0.19-0.84-0.24-1.27 c-0.06-0.33-0.09-0.66-0.09-1c-0.02-0.13-0.02-0.27-0.02-0.4l1.91-2.95l1.87-2.88l0.85-1.31l0.77-1.18l0.26-0.41v-1.03 c0.02-0.23,0.03-0.47,0.02-0.69c-0.01-0.7-0.15-1.38-0.38-2.03c-0.22-0.69-0.53-1.34-0.85-1.94c-0.38-0.69-0.78-1.31-1.11-1.87 C14,7.4,13.66,6.73,13.75,6.26C14.47,6.09,15.23,6,16,6h16c4.18,0,7.78,2.6,9.27,6.26C41.43,12.65,41.57,13.06,41.67,13.48z">
@@ -856,7 +856,7 @@
           </li>
           <li>
             <a href="https://www.linkedin.com/in/prameya-mohanty/" target="_blank"
-              class="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white">
+              class="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white" aria-label="LinkedIn">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 48 48">
                 <path fill="#0078d4"
                   d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5	V37z">
@@ -875,7 +875,7 @@
           </li>
           <li>
             <a href="https://x.com/MohantyPrameya" target="_blank"
-              class="text-[#00acee] hover:text-gray-900 dark:hover:text-white">
+              class="text-[#00acee] hover:text-gray-900 dark:hover:text-white" aria-label="Twitter">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 48 48">
                 <linearGradient id="_osn9zIN2f6RhTsY8WhY4a_5MQ0gPAYYx7a_gr1" x1="10.341" x2="40.798" y1="8.312"
                   y2="38.769" gradientUnits="userSpaceOnUse">
@@ -890,7 +890,7 @@
           </li>
           <li>
             <a href="https://github.com/Prameya14" target="_blank"
-              class="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300">
+              class="text-gray-900 hover:text-gray-900 dark:hover:text-white dark:text-gray-300" aria-label="GitHub">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 48 48">
                 <linearGradient id="rL2wppHyxHVbobwndsT6Ca_AZOZNnY73haj_gr1" x1="4" x2="44" y1="23.508" y2="23.508"
                   gradientUnits="userSpaceOnUse">
@@ -919,13 +919,13 @@
         <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="{{ url_for('static',filename='img/UPASANA.png') }}"
           alt="Upasana Pradhan" />
         <h3 class="mb-1 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          <a>Upasana Pradhan</a>
+          <span>Upasana Pradhan</span>
         </h3>
         <p class="text-lg font-semibold">UI/UX Designer</p>
         <ul class="flex justify-center mt-4 space-x-4">
           <li>
             <a href="https://www.instagram.com/upasanapradhan1/" target="_blank"
-              class="text-[#39569c] hover:text-gray-900 dark:hover:text-white">
+              class="text-[#39569c] hover:text-gray-900 dark:hover:text-white" aria-label="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 48 48">
                 <path fill="#304ffe"
                   d="M41.67,13.48c-0.4,0.26-0.97,0.5-1.21,0.77c-0.09,0.09-0.14,0.19-0.12,0.29v1.03l-0.3,1.01l-0.3,1l-0.33,1.1 l-0.68,2.25l-0.66,2.22l-0.5,1.67c0,0.26-0.01,0.52-0.03,0.77c-0.07,0.96-0.27,1.88-0.59,2.74c-0.19,0.53-0.42,1.04-0.7,1.52 c-0.1,0.19-0.22,0.38-0.34,0.56c-0.4,0.63-0.88,1.21-1.41,1.72c-0.41,0.41-0.86,0.79-1.35,1.11c0,0,0,0-0.01,0 c-0.08,0.07-0.17,0.13-0.27,0.18c-0.31,0.21-0.64,0.39-0.98,0.55c-0.23,0.12-0.46,0.22-0.7,0.31c-0.05,0.03-0.11,0.05-0.16,0.07 c-0.57,0.27-1.23,0.45-1.89,0.54c-0.04,0.01-0.07,0.01-0.11,0.02c-0.4,0.07-0.79,0.13-1.19,0.16c-0.18,0.02-0.37,0.03-0.55,0.03 l-0.71-0.04l-3.42-0.18c0-0.01-0.01,0-0.01,0l-1.72-0.09c-0.13,0-0.27,0-0.4-0.01c-0.54-0.02-1.06-0.08-1.58-0.19 c-0.01,0-0.01,0-0.01,0c-0.95-0.18-1.86-0.5-2.71-0.93c-0.47-0.24-0.93-0.51-1.36-0.82c-0.18-0.13-0.35-0.27-0.52-0.42 c-0.48-0.4-0.91-0.83-1.31-1.27c-0.06-0.06-0.11-0.12-0.16-0.18c-0.06-0.06-0.12-0.13-0.17-0.19c-0.38-0.48-0.7-0.97-0.96-1.49 c-0.24-0.46-0.43-0.95-0.58-1.49c-0.06-0.19-0.11-0.37-0.15-0.57c-0.01-0.01-0.02-0.03-0.02-0.05c-0.1-0.41-0.19-0.84-0.24-1.27 c-0.06-0.33-0.09-0.66-0.09-1c-0.02-0.13-0.02-0.27-0.02-0.4l1.91-2.95l1.87-2.88l0.85-1.31l0.77-1.18l0.26-0.41v-1.03 c0.02-0.23,0.03-0.47,0.02-0.69c-0.01-0.7-0.15-1.38-0.38-2.03c-0.22-0.69-0.53-1.34-0.85-1.94c-0.38-0.69-0.78-1.31-1.11-1.87 C14,7.4,13.66,6.73,13.75,6.26C14.47,6.09,15.23,6,16,6h16c4.18,0,7.78,2.6,9.27,6.26C41.43,12.65,41.57,13.06,41.67,13.48z">
@@ -991,7 +991,7 @@
           </li>
           <li>
             <a href="https://www.linkedin.com/in/upasana-pradhan-8a01ab2a0/" target="_blank"
-              class="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white">
+              class="text-[#ea4c89] hover:text-gray-900 dark:hover:text-white" aria-label="LinkedIn">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 48 48">
                 <path fill="#0078d4"
                   d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5	V37z">
@@ -1015,13 +1015,13 @@
         <img class="mx-auto mb-4 w-36 h-36 rounded-full" src="{{ url_for('static',filename='img/SUSHREE.png') }}"
           alt="Sushree Aayushi" />
         <h3 class="mb-1 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          <a>Sushree Aayushi</a>
+          <span>Sushree Aayushi</span>
         </h3>
         <p class="text-lg font-semibold">Research Analyst</p>
         <ul class="flex justify-center mt-4 space-x-4">
           <li>
             <a href="https://www.instagram.com/sushree.aayushi/" target="_blank"
-              class="text-[#39569c] hover:text-gray-900 dark:hover:text-white">
+              class="text-[#39569c] hover:text-gray-900 dark:hover:text-white" aria-label="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 48 48">
                 <path fill="#304ffe"
                   d="M41.67,13.48c-0.4,0.26-0.97,0.5-1.21,0.77c-0.09,0.09-0.14,0.19-0.12,0.29v1.03l-0.3,1.01l-0.3,1l-0.33,1.1 l-0.68,2.25l-0.66,2.22l-0.5,1.67c0,0.26-0.01,0.52-0.03,0.77c-0.07,0.96-0.27,1.88-0.59,2.74c-0.19,0.53-0.42,1.04-0.7,1.52 c-0.1,0.19-0.22,0.38-0.34,0.56c-0.4,0.63-0.88,1.21-1.41,1.72c-0.41,0.41-0.86,0.79-1.35,1.11c0,0,0,0-0.01,0 c-0.08,0.07-0.17,0.13-0.27,0.18c-0.31,0.21-0.64,0.39-0.98,0.55c-0.23,0.12-0.46,0.22-0.7,0.31c-0.05,0.03-0.11,0.05-0.16,0.07 c-0.57,0.27-1.23,0.45-1.89,0.54c-0.04,0.01-0.07,0.01-0.11,0.02c-0.4,0.07-0.79,0.13-1.19,0.16c-0.18,0.02-0.37,0.03-0.55,0.03 l-0.71-0.04l-3.42-0.18c0-0.01-0.01,0-0.01,0l-1.72-0.09c-0.13,0-0.27,0-0.4-0.01c-0.54-0.02-1.06-0.08-1.58-0.19 c-0.01,0-0.01,0-0.01,0c-0.95-0.18-1.86-0.5-2.71-0.93c-0.47-0.24-0.93-0.51-1.36-0.82c-0.18-0.13-0.35-0.27-0.52-0.42 c-0.48-0.4-0.91-0.83-1.31-1.27c-0.06-0.06-0.11-0.12-0.16-0.18c-0.06-0.06-0.12-0.13-0.17-0.19c-0.38-0.48-0.7-0.97-0.96-1.49 c-0.24-0.46-0.43-0.95-0.58-1.49c-0.06-0.19-0.11-0.37-0.15-0.57c-0.01-0.01-0.02-0.03-0.02-0.05c-0.1-0.41-0.19-0.84-0.24-1.27 c-0.06-0.33-0.09-0.66-0.09-1c-0.02-0.13-0.02-0.27-0.02-0.4l1.91-2.95l1.87-2.88l0.85-1.31l0.77-1.18l0.26-0.41v-1.03 c0.02-0.23,0.03-0.47,0.02-0.69c-0.01-0.7-0.15-1.38-0.38-2.03c-0.22-0.69-0.53-1.34-0.85-1.94c-0.38-0.69-0.78-1.31-1.11-1.87 C14,7.4,13.66,6.73,13.75,6.26C14.47,6.09,15.23,6,16,6h16c4.18,0,7.78,2.6,9.27,6.26C41.43,12.65,41.57,13.06,41.67,13.48z">
@@ -1087,7 +1087,7 @@
           </li>
           <li>
             <a href="https://x.com/aayushi_sushree" target="_blank"
-              class="text-[#00acee] hover:text-gray-900 dark:hover:text-white">
+              class="text-[#00acee] hover:text-gray-900 dark:hover:text-white" aria-label="Twitter">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 48 48">
                 <linearGradient id="_osn9zIN2f6RhTsY8WhY4a_5MQ0gPAYYx7a_gr1" x1="10.341" x2="40.798" y1="8.312"
                   y2="38.769" gradientUnits="userSpaceOnUse">
@@ -1122,8 +1122,8 @@
       <!-- Page 1 of Certificate -->
       <div class="card">
         <div class="card-body p-4">
-          <a
-            target="_blank" href="{{ url_for('static', filename='docs/Certification of Relevance for FemCare Diagnostic Parameters Signed.pdf') }}">
+          <a target="_blank"
+            href="{{ url_for('static', filename='docs/Certification of Relevance for FemCare Diagnostic Parameters Signed.pdf') }}">
             <img src="{{ url_for('static', filename='img/Page 1.jpg') }}" alt="Certificate Page 1"
               class="rounded-lg shadow-lg border"></a>
         </div>
@@ -1136,8 +1136,8 @@
       <!-- Page 2 of Certificate -->
       <div class="card">
         <div class="card-body p-4">
-          <a
-            target="_blank" href="{{ url_for('static', filename='docs/Certification of Relevance for FemCare Diagnostic Parameters Signed.pdf') }}">
+          <a target="_blank"
+            href="{{ url_for('static', filename='docs/Certification of Relevance for FemCare Diagnostic Parameters Signed.pdf') }}">
             <img src="{{ url_for('static', filename='img/Page 2.jpg') }}" alt="Certificate Page 2"
               class="rounded-lg shadow-lg border"></a>
         </div>
