@@ -10,8 +10,8 @@ import shutil
 from flask_pymongo import PyMongo
 import requests
 import tensorflow as tf
+from bson.objectid import ObjectId
 import os
-# import json
 
 app = Flask(__name__, static_folder="Static", template_folder="Templates")
 app.secret_key = '935a55bf-295f-476f-b026-8c362867fa2b'
@@ -148,11 +148,50 @@ def cervical_cancer():
         else:
             values.insert(8, "0")
             values.insert(9, str(sum))
+
         vals = [float(value) for value in values]
         prediction = model.predict(np.array([vals]))
-        
-        return render_template("cervical-cancer.html", features=features, values=[], cc_result=str(prediction[0]*25) + "%", session=session)
-    return render_template("cervical-cancer.html", features=features, values=values, cc_result="", session=session)
+
+        cc = request.form.to_dict()
+        cc["email"] = session['user']['email']
+        mongo.db.ccdata.insert_one(cc)
+
+        data = mongo.db.ccpoints.find_one({ "risk": str(prediction[0]*25) + "%" })
+        prev_diag = mongo.db.ccdata.find({ "email": session['user']['email'] })
+        return render_template("cervical-cancer.html", features=features, values=[], cc_result=str(prediction[0]*25) + "%", session=session, data=data, pd=prev_diag)
+    
+    prev_diag = mongo.db.ccdata.find({ "email": session['user']['email'] })
+    # print(prev_diag[0]["_id"])
+    return render_template("cervical-cancer.html", features=features, values=values, cc_result="", session=session, pd=prev_diag)
+
+@app.route("/cervical-cancer/<string:id>", methods = ['GET', 'POST'])
+def ccdata(id):
+    values = []
+    if ('user' in session):
+        if request.method == "POST":
+            for item in mainsfeatures:
+                resp = request.form.get(item)
+                if resp != None:
+                    values.append(resp)
+            sum = 0
+            for item in features[1]:
+                sum += (int(request.form.get(item)))
+            if sum>0:
+                values.insert(8, "1")
+                values.insert(9, str(sum))
+            else:
+                values.insert(8, "0")
+                values.insert(9, str(sum))
+            vals = [float(value) for value in values]
+            prediction = model.predict(np.array([vals]))
+
+            data = mongo.db.ccpoints.find_one({ "risk": str(prediction[0]*25) + "%" })
+            prev_diag = mongo.db.ccdata.find({ "email": session['user']['email'] })
+            return render_template("cervical-cancer.html", features=features, values=[], cc_result=str(prediction[0]*25) + "%", session=session, data=data, pd=prev_diag)
+
+        diagnosis = mongo.db.ccdata.find_one({ "_id": ObjectId(id) })
+        prev_diag = mongo.db.ccdata.find({ "email": session['user']['email'] })
+        return render_template("cervical-cancer.html", features=features, values=values, cc_result="", session=session, diagnosis=diagnosis, pd=prev_diag)
 
 @app.route("/pcos", methods=["GET", "POST"])
 def pcos():

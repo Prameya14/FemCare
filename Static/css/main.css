@@ -1869,6 +1869,14 @@ input:checked + .toggle-bg {
   top: 0px;
 }
 
+.end-2\.5 {
+  inset-inline-end: 0.625rem;
+}
+
+.top-2\.5 {
+  top: 0.625rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1943,6 +1951,11 @@ input:checked + .toggle-bg {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .-ml-1 {
@@ -2137,6 +2150,10 @@ input:checked + .toggle-bg {
   height: 0.75rem;
 }
 
+.h-3\.5 {
+  height: 0.875rem;
+}
+
 .h-36 {
   height: 9rem;
 }
@@ -2185,6 +2202,10 @@ input:checked + .toggle-bg {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .max-h-full {
   max-height: 100%;
 }
@@ -2211,6 +2232,10 @@ input:checked + .toggle-bg {
 
 .w-3 {
   width: 0.75rem;
+}
+
+.w-3\.5 {
+  width: 0.875rem;
 }
 
 .w-3\/6 {
@@ -2255,6 +2280,14 @@ input:checked + .toggle-bg {
 
 .w-full {
   width: 100%;
+}
+
+.w-48 {
+  width: 12rem;
+}
+
+.w-96 {
+  width: 24rem;
 }
 
 .max-w-2xl {
@@ -2317,6 +2350,10 @@ input:checked + .toggle-bg {
   flex-shrink: 0;
 }
 
+.shrink-0 {
+  flex-shrink: 0;
+}
+
 .-translate-x-full {
   --tw-translate-x: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2373,6 +2410,10 @@ input:checked + .toggle-bg {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-cols-4 {
@@ -2475,6 +2516,12 @@ input:checked + .toggle-bg {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -2524,6 +2571,10 @@ input:checked + .toggle-bg {
   border-radius: 0.5rem;
 }
 
+.rounded-sm {
+  border-radius: 0.125rem;
+}
+
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
@@ -2570,6 +2621,10 @@ input:checked + .toggle-bg {
 
 .rounded-br-lg {
   border-bottom-right-radius: 0.5rem;
+}
+
+.rounded-ss-lg {
+  border-start-start-radius: 0.5rem;
 }
 
 .rounded-tl-lg {
@@ -2754,6 +2809,11 @@ input:checked + .toggle-bg {
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
+}
+
+.bg-blue-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(225 239 254 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'https\:\/\/flowbite\.s3\.amazonaws\.com\/docs\/jumbotron\/hero-pattern\.svg\'\)\] {
@@ -3232,6 +3292,11 @@ input:checked + .toggle-bg {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-blue-800 {
+  --tw-text-opacity: 1;
+  color: rgb(30 66 159 / var(--tw-text-opacity));
+}
+
 .text-opacity-90 {
   --tw-text-opacity: 0.9;
 }
@@ -3338,6 +3403,10 @@ input:checked + .toggle-bg {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.duration-75 {
+  transition-duration: 75ms;
 }
 
 .ease-out {
@@ -3899,6 +3968,11 @@ input:checked + .toggle-bg {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
+.hover\:text-pink-800:hover {
+  --tw-text-opacity: 1;
+  color: rgb(153 21 75 / var(--tw-text-opacity));
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -4004,6 +4078,11 @@ input:checked + .toggle-bg {
   --tw-ring-color: rgb(249 128 128 / var(--tw-ring-opacity));
 }
 
+.group:hover .group-hover\:text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
 .dark\:divide-gray-600:is(.dark *) > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-divide-opacity));
@@ -4100,6 +4179,11 @@ input:checked + .toggle-bg {
   background-color: rgb(224 36 36 / var(--tw-bg-opacity));
 }
 
+.dark\:bg-blue-900:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(35 56 118 / var(--tw-bg-opacity));
+}
+
 .dark\:bg-\[url\(\'https\:\/\/flowbite\.s3\.amazonaws\.com\/docs\/jumbotron\/hero-pattern-dark\.svg\'\)\]:is(.dark *) {
   background-image: url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg');
 }
@@ -4157,6 +4241,11 @@ input:checked + .toggle-bg {
 .dark\:text-white:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dark\:text-blue-300:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(164 202 254 / var(--tw-text-opacity));
 }
 
 .dark\:placeholder-gray-400:is(.dark *)::-moz-placeholder {
@@ -4255,6 +4344,11 @@ input:checked + .toggle-bg {
   color: rgb(231 70 148 / var(--tw-text-opacity));
 }
 
+.dark\:hover\:text-pink-700:hover:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(191 18 93 / var(--tw-text-opacity));
+}
+
 .dark\:hover\:text-white:hover:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -4310,6 +4404,16 @@ input:checked + .toggle-bg {
   --tw-ring-color: rgb(155 28 28 / var(--tw-ring-opacity));
 }
 
+.dark\:focus\:ring-blue-800:focus:is(.dark *) {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
+}
+
+.group:hover .dark\:group-hover\:text-white:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 @media (min-width: 640px) {
   .sm\:mt-0 {
     margin-top: 0px;
@@ -4345,6 +4449,10 @@ input:checked + .toggle-bg {
 
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .sm\:grid-cols-4 {
@@ -4428,6 +4536,16 @@ input:checked + .toggle-bg {
 
   .md\:order-2 {
     order: 2;
+  }
+
+  .md\:my-10 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .md\:my-6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .md\:me-0 {
@@ -4517,6 +4635,10 @@ input:checked + .toggle-bg {
 
   .md\:p-5 {
     padding: 1.25rem;
+  }
+
+  .md\:p-8 {
+    padding: 2rem;
   }
 
   .md\:px-6 {
@@ -4613,16 +4735,12 @@ input:checked + .toggle-bg {
     width: 66.666667%;
   }
 
-  .lg\:max-w-screen-lg {
-    max-width: 1024px;
+  .lg\:max-w-screen-xl {
+    max-width: 1280px;
   }
 
   .lg\:max-w-xl {
     max-width: 36rem;
-  }
-
-  .lg\:max-w-screen-xl {
-    max-width: 1280px;
   }
 
   .lg\:grid-cols-2 {
@@ -4646,11 +4764,6 @@ input:checked + .toggle-bg {
   .lg\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
-  }
-
-  .lg\:px-36 {
-    padding-left: 9rem;
-    padding-right: 9rem;
   }
 
   .lg\:px-4 {
@@ -4707,6 +4820,10 @@ input:checked + .toggle-bg {
 @media (min-width: 1280px) {
   .xl\:w-1\/4 {
     width: 25%;
+  }
+
+  .xl\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .xl\:gap-10 {
