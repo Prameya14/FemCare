@@ -101,29 +101,29 @@ values = [[33, 89.0, 163.0, 33.5, 78, 22, 10.8, 4, 7, 6.0, 0, 381.99, 15.0, 3.45
 
 # Ovarian Cancer Setup
 
-target_names = {
-    'CC': "Clear Cell Carcinoma",
-    'EC': "Endometrioid Carcinoma",
-    'HGSC': "High Grade Serous Carcinoma",
-    'LGSC': "Low Grade Serous Carcinoma",
-    'MC': 'Mucinous Carcinoma'
-}
+# target_names = {
+#     'CC': "Clear Cell Carcinoma",
+#     'EC': "Endometrioid Carcinoma",
+#     'HGSC': "High Grade Serous Carcinoma",
+#     'LGSC': "Low Grade Serous Carcinoma",
+#     'MC': 'Mucinous Carcinoma'
+# }
 
-ocmodel = tf.keras.models.load_model("models/ovarian-cancer.h5")
+# ocmodel = tf.keras.models.load_model("models/ovarian-cancer.h5")
 
-def load_and_prep_image(filename, img_shape=224):
-    img = tf.io.read_file(filename)
-    img = tf.image.decode_image(img, channels=3)
-    img = tf.image.resize(img, size = [img_shape, img_shape])
-    img = img/255.
-    return img
+# def load_and_prep_image(filename, img_shape=224):
+#     img = tf.io.read_file(filename)
+#     img = tf.image.decode_image(img, channels=3)
+#     img = tf.image.resize(img, size = [img_shape, img_shape])
+#     img = img/255.
+#     return img
 
-def pred_and_plot(model, filename, target_names):
-    tn = list(target_names.keys())
-    img = load_and_prep_image(filename)
-    pred = model.predict(tf.expand_dims(img, axis=0))
-    pred_class = tn[int(tf.round(pred)[0][0])]
-    return f"The class of Ovarian Cancer is {target_names[pred_class]}"
+# def pred_and_plot(model, filename, target_names):
+#     tn = list(target_names.keys())
+#     img = load_and_prep_image(filename)
+#     pred = model.predict(tf.expand_dims(img, axis=0))
+#     pred_class = tn[int(tf.round(pred)[0][0])]
+#     return f"The class of Ovarian Cancer is {target_names[pred_class]}"
 
 # ========================================================================================
 
@@ -221,17 +221,17 @@ def breast_cancer():
         return render_template("breast-cancer.html", bc_result=has_cancer, session=session)
     return render_template("breast-cancer.html", bc_result="", session=session)
     
-@app.route("/ovarian-cancer", methods=["GET", "POST"])
-def ovarian_cancer():
-    if request.method == "POST":
-        image = request.files["img"]
-        filename = secure_filename(image.filename)
-        file_path = os.path.join('Uploads', filename)
-        image.save(file_path)
-        result = pred_and_plot(ocmodel, file_path, target_names)
-        os.remove(file_path)
-        return render_template("ovarian-cancer.html", oc_result=result, session=session)
-    return render_template("ovarian-cancer.html", oc_result="", session=session)
+# @app.route("/ovarian-cancer", methods=["GET", "POST"])
+# def ovarian_cancer():
+#     if request.method == "POST":
+#         image = request.files["img"]
+#         filename = secure_filename(image.filename)
+#         file_path = os.path.join('Uploads', filename)
+#         image.save(file_path)
+#         result = pred_and_plot(ocmodel, file_path, target_names)
+#         os.remove(file_path)
+#         return render_template("ovarian-cancer.html", oc_result=result, session=session)
+#     return render_template("ovarian-cancer.html", oc_result="", session=session)
     
 @app.route("/journal", methods=["GET", "POST"])
 def journal():
