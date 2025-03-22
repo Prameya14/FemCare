@@ -262,6 +262,11 @@ def add():
     mongo.db.articles.insert_one(article)
     return "Article added successfully."
 
+@app.route("/telemedicine")
+def telemedicine():
+    data = mongo.db.telemedicine.find({})
+    return render_template("telemedicine.html", session=session, data=data)
+
 @app.route("/get", methods=["GET", "POST"])
 def get():
     reqUrl = "https://femcare-chatbot.vercel.app/get"
