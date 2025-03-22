@@ -159,9 +159,12 @@ def cervical_cancer():
         data = mongo.db.ccpoints.find_one({ "risk": str(prediction[0]*25) + "%" })
         prev_diag = mongo.db.ccdata.find({ "email": session['user']['email'] })
         return render_template("cervical-cancer.html", features=features, values=[], cc_result=str(prediction[0]*25) + "%", session=session, data=data, pd=prev_diag)
-    
-    prev_diag = mongo.db.ccdata.find({ "email": session['user']['email'] })
-    # print(prev_diag[0]["_id"])
+
+    if ('user' in session):    
+        prev_diag = mongo.db.ccdata.find({ "email": session['user']['email'] })
+    else:
+        prev_diag = None
+
     return render_template("cervical-cancer.html", features=features, values=values, cc_result="", session=session, pd=prev_diag)
 
 @app.route("/cervical-cancer/<string:id>", methods = ['GET', 'POST'])
