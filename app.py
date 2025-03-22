@@ -51,7 +51,7 @@ loaded_model.compile(
 
 def save_and_get_pred_img(image):
     defrance = str(random.randint(1, 100000))
-    file = r"/home/prameya/femcare"
+    file = os.getcwd()
     file_path = os.path.join(file, defrance)
     os.makedirs(file_path)
     filename = secure_filename(image.filename)
